@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATP Live Pulse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="site-header">
+        <p class="site-mark">COURT</p>
+      </header>
+
+      <section class="status-row">
+        <div class="status-meta">
+          <span id="mode-pill" class="pill">Loading…</span>
+          <span id="updated-at" class="timestamp"></span>
+        </div>
+        <button id="refresh-button" class="refresh-button" type="button">Refresh scores</button>
+        <p id="status-text" class="status-text">Connecting to ATP data…</p>
+      </section>
+
+      <section id="content" class="content-grid" aria-live="polite"></section>
+    </main>
+
+    <template id="tournament-template">
+      <article class="tournament-card">
+        <div class="tournament-topline">
+          <span class="level-badge"></span>
+          <span class="state-badge"></span>
+        </div>
+        <div class="tournament-heading">
+          <h2 class="tournament-title"></h2>
+          <p class="tournament-meta"></p>
+        </div>
+
+        <section class="panel tournament-tabs">
+          <div class="tab-bar tournament-tab-bar" role="tablist" aria-label="Tournament views"></div>
+          <div class="tab-panels"></div>
+        </section>
+      </article>
+    </template>
+
+    <template id="match-template">
+      <article class="match-card">
+        <div class="match-topline">
+          <div>
+            <p class="match-round"></p>
+            <p class="match-subline"></p>
+          </div>
+          <span class="match-status"></span>
+        </div>
+        <div class="competitors"></div>
+        <p class="match-note"></p>
+      </article>
+    </template>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+  </html>
