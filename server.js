@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const publicDir = path.join(__dirname, "public");
 const port = Number(process.env.PORT || 3000);
-const host = process.env.HOST || "0.0.0.0";
+const host = "0.0.0.0";
 
 const LIVE_FEED_URL =
   "https://app.atptour.com/api/v2/gateway/livematches/website?scoringTournamentLevel=tour";
